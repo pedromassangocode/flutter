@@ -252,7 +252,7 @@ class DriveCommand extends RunCommandBase {
           // application, DDS will already be running remotely and this call will fail.
           // We can ignore this and continue to use the remote DDS instance.
           await device.dds.startDartDevelopmentService(Uri.parse(observatoryUri), ipv6);
-        } on dds.DartDevelopmentServiceException catch(_) {
+        } on dds.DartDevelopmentServiceException {
           globals.printTrace('Note: DDS is already connected to $observatoryUri.');
         }
       }
