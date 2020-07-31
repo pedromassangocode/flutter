@@ -1148,7 +1148,7 @@ abstract class RangeSliderThumbShape {
     SliderThemeData sliderTheme,
     Thumb thumb,
     bool isPressed,
-    RangeValues values
+    RangeValues values,
   });
 }
 
