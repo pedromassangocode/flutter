@@ -448,17 +448,17 @@ class TypeMatcher<T> {
 /// updating the underlying element (i.e., by calling [Element.update] with the
 /// new widget). Otherwise, the old element is removed from the tree, the new
 /// widget is inflated into an element, and the new element is inserted into the
-/// tree. Basically any time you're building a list of widgets from a list of
-/// data, and the list might change, you should key the children, so that we
-/// keep the subtrees tied to the data. Otherwise, we won't know what's going on
-/// and if anything is stateful the state could spill from one to the other
-/// (what's really going on is that the data is spilling from one to the other,
-/// because Flutter have no way to distinguish "an item changed its data" from
-/// "one of the items was removed/added and pushed all the other items around"
-/// without keys).
+/// tree. Basically any time you are building a list of widgets from a list of
+/// data, and the list might change, you should set a key to the children, so
+/// that we keep the subtrees tied to the data. Otherwise, we will not know
+/// what is going on and if anything is stateful the state could spill from one
+/// to the other (what's really going on is that the data is spilling from one
+/// to the other,because Flutter has no way to distinguish "an item changed its
+/// data" from "one of the items was removed/added and pushed all the other
+/// items around" without keys).
 ///
 /// Generally the best key to use is a [ValueKey] where T is the type of the
-/// data you're generating the widgets from, assuming that each such datum is
+/// data you are generating the widgets from, assuming that each such data is
 /// unique. (In particular, no need to use toString).
 ///
 /// The [key] property defaults to null when not provided.
