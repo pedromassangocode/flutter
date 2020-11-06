@@ -460,7 +460,9 @@ class TypeMatcher<T> {
 /// data you are generating the widgets from, assuming that each such data is
 /// unique. (In particular, no need to use toString).
 ///
-/// The [key] property defaults to null when not provided.
+/// The [key] property defaults to null when not provided. If widgets have no
+/// key (their [key] is null), then they are considered a match if they have the
+/// same type, even if their children are completely different.
 ///
 /// See also:
 ///
